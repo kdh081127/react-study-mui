@@ -1,9 +1,17 @@
-import { Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
+import { useState } from 'react';
 
 export default function IndexPage() {
+  const [count,setCount] = useState(0);
+
+  function handleButtonClick () {
+    setCount(prev=>prev+1);
+  }
   return (
     <Stack>
       <Typography>Index Page</Typography>
-    </Stack>
+      <Typography variant='h1'>{count}</Typography>
+      <Button onClick={handleButtonClick} variant='contained'>카운트count</Button>
+    </Stack> 
   );
 }
